@@ -75,7 +75,7 @@ namespace UI
                 selectedClothes = slotX.slotClothes;
             }
             //PlayerController.ME.ChangeClothes(selectedClothes);
-            PlayerController.ME.AddClothesToInventory(selectedClothes);
+            PlayerController.ME.AddClothesToInventory(selectedClothes, true);
             boughtSomething = true;
             onSell.Invoke();
             CloseHUD();

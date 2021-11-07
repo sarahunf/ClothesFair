@@ -31,16 +31,19 @@ public class PlayerController : MonoBehaviour
             clt.GetComponent<ChangeClothesColor>().ChangeColor(clothes.color);
             break;
         }
+        AddClothesToInventory(clothes, false);
     }
 
-    public void AddClothesToInventory(Clothes clothes)
+    public void AddClothesToInventory(Clothes clothes, bool shouldAddToInventory)
     {
         foreach (var t in inventory.shownSlots)
         {
             if (clothes.name.Contains(t.typeOfClothes))
                 t.Populate(clothes);
         }
-        inventory.allClothes.Add(clothes);
+
+        if (shouldAddToInventory)
+            inventory.allClothes.Add(clothes);
     }
     
 }
