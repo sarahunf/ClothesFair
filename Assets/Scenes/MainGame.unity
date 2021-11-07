@@ -1604,7 +1604,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 1567550925396094617, guid: dd9a8f0eabbeb4e4fb24aa31265d3980, type: 3}
+  slots: []
   slotsParent: {fileID: 221288932}
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
+  onSell:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeftWithoutBuying:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &337863085
 GameObject:
   m_ObjectHideFlags: 0
@@ -13124,6 +13134,34 @@ PrefabInstance:
       value: SellingHUD, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4144271227734607139, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 322935575}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyClothes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SellingHUD, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736781486578582343, guid: d05b315f521adde43973658364485195, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}

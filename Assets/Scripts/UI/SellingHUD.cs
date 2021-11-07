@@ -1,17 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using NPC;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SellingHUD : MonoBehaviour
 {
-    public GameObject slot;
+    public GameObject slot; 
+    public List<Slot> slots;
 
     public static SellingHUD ME = null;
 
     public Transform slotsParent;
+    public static Clothes selectedClothes;
+    public UnityEvent onClose;
+    public UnityEvent onSell;
+    public UnityEvent onLeftWithoutBuying;
+
+    private bool boughtSomething;
 
     private void Awake()
     {
@@ -31,7 +40,9 @@ public class SellingHUD : MonoBehaviour
         foreach (var clt in clothes)
         {
             var go = Instantiate(slot,slotsParent);
-            go.GetComponent<Slot>().Populate(clt);
+            Slot x = go.GetComponent<Slot>();
+                x.Populate(clt);
+            slots.Add(x);
         }
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
     }
@@ -45,5 +56,28 @@ public class SellingHUD : MonoBehaviour
         }
         slotsParent.parent.gameObject.SetActive(false);
         Store.opened = false;
+        
+        //left without buying unlock NPC anim
+        if (!boughtSomething)
+        {
+            onLeftWithoutBuying.Invoke();
+        }
+        else
+        {
+            boughtSomething = false;
+        }
+        onClose.Invoke();
+    }
+
+    public void BuyClothes()
+    {
+        foreach (var slotX in slots.Where(s => s.toggle.isOn))
+        {
+            selectedClothes = slotX.slotClothes;
+        }
+        PlayerController.ME.ChangeClothes(selectedClothes);
+        boughtSomething = true;
+        onSell.Invoke();
+        CloseHUD();
     }
 }

@@ -13,14 +13,11 @@ namespace NPC
         private SpriteRenderer spriteRenderer;
         private const float waitTime = 2f;
         [SerializeField] private NpcController controller;
-
-        private void Awake()
-        {
-            controller.onSell.AddListener(Sell);
-        }
-
+        
         private void Start()
         {
+            SellingHUD.ME.onSell.AddListener(Sell);
+            SellingHUD.ME.onLeftWithoutBuying.AddListener(NotSell);
             spriteRenderer = GetComponent<SpriteRenderer>();
             defaultSprite = spriteRenderer.sprite;
         }

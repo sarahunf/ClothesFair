@@ -10,8 +10,10 @@ public class Slot : MonoBehaviour
     public Text displayName;
     public Text displayValue;
     private Color32 color;
+
+    public Clothes slotClothes;
     
-    [SerializeField] private Toggle toggle;
+    public Toggle toggle;
 
     private void Start()
     {
@@ -24,5 +26,6 @@ public class Slot : MonoBehaviour
         displayName.text = clt.displayName;
         displayValue.text = clt.value.ToString();
         image.color = clt.color;
+        slotClothes = clt;
     }
 }
