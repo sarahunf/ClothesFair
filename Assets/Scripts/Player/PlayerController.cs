@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         foreach (var clt in this.clothes.Where(clt => clt.gameObject.name.Contains(clothes)))
         {
             clt.GetComponent<ChangeClothesColor>()
-                .ChangeColor(UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+                .ChangeColor(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
             break;
         }
     }

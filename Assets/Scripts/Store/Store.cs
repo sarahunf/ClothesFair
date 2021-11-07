@@ -6,9 +6,12 @@ using UnityEngine;
 public class Store : MonoBehaviour
 {
     [SerializeField] private NpcController npc;
+    public static bool opened;
 
-    private void OpenSell()
+    public void OpenSell()
     {
-        npc.onSell.Invoke();
+        if (opened) return;
+        opened = true;
+        npc.OpenSell();
     }
 }
