@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 8760990398667688132, guid: 5851484b498ed984688083995fcf1027, type: 3}
   displayName: DARK SOUL
-  value: 7
+  value: 8
   color:
     serializedVersion: 2
     rgba: 4279637525

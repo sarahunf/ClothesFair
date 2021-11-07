@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2400805006687344572, guid: 5851484b498ed984688083995fcf1027, type: 3}
   displayName: SUMMER POOL
-  value: 7
+  value: 4
   color:
     serializedVersion: 2
     rgba: 4292597063
