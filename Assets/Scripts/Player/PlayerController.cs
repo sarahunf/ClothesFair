@@ -1,12 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using General;
+using Player;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public List<SpriteRenderer> clothes;
     public static PlayerController ME = null;
+    public PlayerMovement movement;
 
     private void Awake()
     {
@@ -20,12 +23,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ChangeClothes(string clothes)
+    public void ChangeClothes(Clothes clothes)
     {
-        foreach (var clt in this.clothes.Where(clt => clt.gameObject.name.Contains(clothes)))
+        foreach (var clt in this.clothes.Where(clt => clt.gameObject.name.Contains(clothes.name.GetUntilOrEmpty())))
         {
-            clt.GetComponent<ChangeClothesColor>()
-                .ChangeColor(UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+            clt.GetComponent<ChangeClothesColor>().ChangeColor(clothes.color);
             break;
         }
     }
