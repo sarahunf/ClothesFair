@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,7 +12,7 @@ namespace NPC
         [SerializeField] private Sprite mainSprite;
         private Sprite defaultSprite;
         private SpriteRenderer spriteRenderer;
-        private const float waitTime = 2f;
+        private const float waitTime = 1f;
         [SerializeField] private NpcController controller;
         
         private void Start()

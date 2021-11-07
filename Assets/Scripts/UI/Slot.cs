@@ -1,31 +1,39 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour
+namespace UI
 {
-    public Image image;
-    public Text displayName;
-    public Text displayValue;
-    private Color32 color;
+    public class Slot : MonoBehaviour
+    {
+        public Image image;
+        public Text displayName;
+        public Text displayValue;
+        private Color32 color;
+        public Toggle toggle;
 
-    public Clothes slotClothes;
+        [HideInInspector]public Clothes slotClothes;
     
-    public Toggle toggle;
 
-    private void Start()
-    {
-        toggle.group = SellingHUD.ME.slotsParent.GetComponent<ToggleGroup>();
-    }
+        private void Start()
+        {
+            if (toggle)
+                toggle.group = SellingHUD.ME.slotsParent.GetComponent<ToggleGroup>();
+        }
 
-    public void Populate(Clothes clt)
-    {
-        image.sprite = clt.sprite;
-        displayName.text = clt.displayName;
-        displayValue.text = clt.value.ToString();
-        image.color = clt.color;
-        slotClothes = clt;
+        public virtual void Populate(Clothes clt)
+        {
+            if (image)
+            {
+                image.gameObject.SetActive(true);
+                image.sprite = clt.sprite;
+                image.color = clt.color;
+            }
+            if (displayName)
+                displayName.text = clt.displayName;
+            if (displayValue)
+                displayValue.text = clt.value.ToString();
+        
+            slotClothes = clt;
+        }
     }
 }
