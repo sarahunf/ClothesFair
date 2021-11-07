@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace NPC
 {
-    public class Npc : MonoBehaviour
+    public class NpcController : MonoBehaviour
     {
         public UnityEvent onSell;
         [SerializeField] private string clothe;

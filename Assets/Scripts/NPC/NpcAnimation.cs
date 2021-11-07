@@ -12,7 +12,7 @@ namespace NPC
         private Sprite defaultSprite;
         private SpriteRenderer spriteRenderer;
         private const float waitTime = 2f;
-        [SerializeField] private Npc controller;
+        [SerializeField] private NpcController controller;
 
         private void Awake()
         {

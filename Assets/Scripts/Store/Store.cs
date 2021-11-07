@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Store : MonoBehaviour
 {
-    [SerializeField] private Npc npc;
+    [SerializeField] private NpcController npc;
 
     private void OpenSell()
     {
