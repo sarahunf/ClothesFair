@@ -11,6 +11,7 @@ public class Changer : MonoBehaviour
     private PlayerController player;
     [SerializeField] private Animator animator;
     [SerializeField]  private Button wearBtn;
+
     private void Start()
     {
         player = PlayerController.ME;
@@ -24,6 +25,7 @@ public class Changer : MonoBehaviour
             PlayerController.ME.ChangeClothes(slot.slotClothes);
         }
         animator.ResetTrigger("open");
+        Close();
     }
     
     private void EnableWear()
