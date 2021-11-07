@@ -1916,6 +1916,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 930828148}
     m_Modifications:
+    - target: {fileID: 4362077875739398548, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
+      propertyPath: clothe
+      value: hat
+      objectReference: {fileID: 0}
     - target: {fileID: 4576871096617218060, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
       propertyPath: m_Name
       value: NPC_hats
@@ -11276,6 +11280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 337863086}
     m_Modifications:
+    - target: {fileID: 4362077875739398548, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
+      propertyPath: clothe
+      value: pants
+      objectReference: {fileID: 0}
     - target: {fileID: 4576871096617218060, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
       propertyPath: m_Name
       value: NPC_pants
@@ -11345,6 +11353,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1047233948}
     m_Modifications:
+    - target: {fileID: 4362077875739398548, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
+      propertyPath: clothe
+      value: boots
+      objectReference: {fileID: 0}
     - target: {fileID: 4576871096617218060, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
       propertyPath: m_Name
       value: NPC_boots
@@ -12708,6 +12720,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 887138846}
     m_Modifications:
+    - target: {fileID: 4362077875739398548, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
+      propertyPath: clothe
+      value: shirt
+      objectReference: {fileID: 0}
     - target: {fileID: 4576871096617218060, guid: cd69adcfa0d3d0340a63bf871e568e0a, type: 3}
       propertyPath: m_Name
       value: NPC_shirt
@@ -12824,6 +12840,18 @@ PrefabInstance:
     - target: {fileID: 4742053127987725648, guid: 577b71827246e7e4eb557fc56e389aa8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829296466101585826, guid: 577b71827246e7e4eb557fc56e389aa8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829296466101585826, guid: 577b71827246e7e4eb557fc56e389aa8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829296466101585826, guid: 577b71827246e7e4eb557fc56e389aa8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 577b71827246e7e4eb557fc56e389aa8, type: 3}

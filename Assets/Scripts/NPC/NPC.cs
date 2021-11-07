@@ -8,7 +8,7 @@ namespace NPC
     public class Npc : MonoBehaviour
     {
         public UnityEvent onSell;
-        [SerializeField] private Collider2D collider2D;
+        [SerializeField] private string clothe;
 
         private void Start()
         {
@@ -17,7 +17,7 @@ namespace NPC
 
         private void Sell()
         {
-            Debug.Log("Selling right now");
+            PlayerController.ME.ChangeClothes(clothe);
         }
     }
 }
