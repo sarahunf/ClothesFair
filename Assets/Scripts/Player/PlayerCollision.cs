@@ -22,9 +22,18 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D coll)
     {
-        if (coll.gameObject.name.Contains("store") && spacePressed && !Store.opened)
+        if (coll.gameObject.name.Contains("store") && spacePressed && !Store.Store.opened)
         {
-            coll.gameObject.GetComponent<Store>().OpenSell();
+            coll.gameObject.GetComponent<Store.Store>().OpenSell();
+        }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D coll)
+    {
+        if (coll.gameObject.name.Contains("Changer") && spacePressed)
+        {
+            coll.gameObject.GetComponent<Changer>().Open();
         }
     }
 }

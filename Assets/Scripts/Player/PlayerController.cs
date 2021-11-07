@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public List<SpriteRenderer> clothes;
     public static PlayerController ME = null;
     public PlayerMovement movement;
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -31,4 +32,15 @@ public class PlayerController : MonoBehaviour
             break;
         }
     }
+
+    public void AddClothesToInventory(Clothes clothes)
+    {
+        foreach (var t in inventory.shownSlots)
+        {
+            if (clothes.name.Contains(t.typeOfClothes))
+                t.Populate(clothes);
+        }
+        inventory.allClothes.Add(clothes);
+    }
+    
 }

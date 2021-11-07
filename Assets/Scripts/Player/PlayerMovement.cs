@@ -5,7 +5,7 @@ namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField]private float moveSpeed = 5f;
+        [SerializeField]private float moveSpeed;
         private float defaultMoveSpeed;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private Animator animator;

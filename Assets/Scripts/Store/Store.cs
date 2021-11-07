@@ -1,34 +1,36 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using NPC;
+using UI;
 using UnityEngine;
 
-public class Store : MonoBehaviour
+namespace Store
 {
-    [SerializeField] private NpcController npc;
-    public static bool opened;
-    public Sprite facingStore;
-
-    private void Start()
+    public class Store : MonoBehaviour
     {
-        SellingHUD.ME.onClose.AddListener(CloseSell);
-    }
+        [SerializeField] private NpcController npc;
+        public static bool opened;
+        private PlayerController player;
+
+        private void Start()
+        {
+            SellingHUD.ME.onClose.AddListener(CloseSell);
+            player = PlayerController.ME;
+        }
 
 
-    public void OpenSell()
-    {
-        if (opened) return;
-        opened = true;
-        npc.OpenSell();
-        PlayerController.ME.movement.StopMoving();
-    }
+        public void OpenSell()
+        {
+            if (opened) return;
+            opened = true;
+            npc.OpenSell();
+            player.movement.StopMoving();
+        }
 
-    public void CloseSell()
-    {
-        PlayerController.ME.movement.StartMoving();
-        if (!opened) return;
-        opened = false;
-        npc.CloseSell();
+        public void CloseSell()
+        {
+            player.movement.StartMoving();
+            if (!opened) return;
+            opened = false;
+            npc.CloseSell();
+        }
     }
 }
