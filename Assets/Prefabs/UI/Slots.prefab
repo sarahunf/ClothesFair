@@ -82,6 +82,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1735660743638820023}
     m_Modifications:
+    - target: {fileID: 1567550925027227768, guid: dd9a8f0eabbeb4e4fb24aa31265d3980, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1567550925396094617, guid: dd9a8f0eabbeb4e4fb24aa31265d3980, type: 3}
       propertyPath: m_Name
       value: Slot

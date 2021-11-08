@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -22,18 +23,37 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D coll)
     {
-        if (coll.gameObject.name.Contains("store") && spacePressed && !Store.Store.opened)
+        if (!coll.gameObject.name.Contains("store")) return;
+        var store = coll.gameObject.GetComponent<Store.Store>();
+        StartCoroutine(store.ShowSpeech());
+        if (spacePressed && !Store.Store.opened)
         {
-            coll.gameObject.GetComponent<Store.Store>().OpenSell();
+            store.CloseSpeech();
+            store.OpenSell();
         }
 
+        if (spacePressed && Instructions.ME.isShow)
+        {
+            Instructions.ME.HideSpacebarTip();
+        }
+        if (Instructions.ME.usedSpacebarOnce) return;
+        Instructions.ME.ShowSpacebarTip();
     }
 
     private void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.name.Contains("Changer") && spacePressed)
+        if (!coll.gameObject.name.Contains("Changer")) return;
+        if (spacePressed)
         {
             coll.gameObject.GetComponent<Changer>().Open();
         }
+
+        if (spacePressed && Instructions.ME.isShow)
+        {
+            Instructions.ME.HideSpacebarTip();
+        }
+
+        if (Instructions.ME.usedSpacebarOnce) return;
+        Instructions.ME.ShowSpacebarTip();
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using General;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,11 +40,17 @@ public class Changer : MonoBehaviour
     public void Open()
     {
         if (opened) return;
+        Instructions.ME.HideTreeTip();
         opened = true;
         player.inventory.DisplayAllClothes();
         player.movement.StopMoving();
         animator.SetTrigger("open");
         EnableWear();
+    }
+
+    public void PlayAnimation()
+    {
+        animator.SetTrigger("open");
     }
 
     public void Close()
