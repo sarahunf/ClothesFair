@@ -52,5 +52,6 @@ public class Changer : MonoBehaviour
         opened = false;
         player.inventory.HideAllClothes();
         player.movement.StartMoving();
+        animator.ResetTrigger("open");
     }
 }

@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 4742053127987725649}
   - component: {fileID: 8840478168213782384}
   - component: {fileID: 2590780602900648568}
+  - component: {fileID: 760662655854943829}
   - component: {fileID: 3086134466183453065}
   m_Layer: 0
   m_Name: Player
@@ -418,6 +419,7 @@ MonoBehaviour:
   - {fileID: 6547077944656460479}
   movement: {fileID: 4742053127987725613}
   inventory: {fileID: 2590780602900648568}
+  money: {fileID: 760662655854943829}
 --- !u!114 &4742053127987725613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,12 +478,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7cf9164914e794b916405ebfafa0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00000000
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  shownSlots: []
+  allClothes: []
+  allSlots: []
+  inventoryGO: {fileID: 0}
+  slotPrefab: {fileID: 0}
+  slotsParent: {fileID: 0}
+--- !u!114 &760662655854943829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742053127987725612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac128f1f10298444aa7b9b5d7ddbc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  money: 40
 --- !u!60 &3086134466183453065
 PolygonCollider2D:
   m_ObjectHideFlags: 0
