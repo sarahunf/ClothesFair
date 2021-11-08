@@ -74,11 +74,19 @@ namespace UI
             {
                 selectedClothes = slotX.slotClothes;
             }
-            //PlayerController.ME.ChangeClothes(selectedClothes);
-            PlayerController.ME.AddClothesToInventory(selectedClothes, true);
-            boughtSomething = true;
-            onSell.Invoke();
-            CloseHUD();
+
+            if (selectedClothes.value <= PlayerController.ME.money.money)
+            {
+                PlayerController.ME.AddClothesToInventory(selectedClothes, true);
+                boughtSomething = true;
+                onSell.Invoke();
+                CloseHUD();
+                PlayerController.ME.money.SpendMoney(selectedClothes.value);
+            }
+            else
+            {
+                Debug.Log("Not enough money to buy");
+            }
         }
     }
 }

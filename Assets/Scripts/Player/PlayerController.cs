@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController ME = null;
     public PlayerMovement movement;
     public Inventory inventory;
-
+    public PlayerMoney money;
     private void Awake()
     {
         if (ME == null)
