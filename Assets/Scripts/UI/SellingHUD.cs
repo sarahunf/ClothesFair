@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using General;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -20,6 +21,7 @@ namespace UI
         public UnityEvent onLeftWithoutBuying;
 
         private bool boughtSomething;
+        public static bool isOpen;
 
         private void Awake()
         {
@@ -44,6 +46,7 @@ namespace UI
                 slots.Add(x);
             }
             LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+            isOpen = true;
         }
 
         public void CloseHUD()
@@ -66,6 +69,7 @@ namespace UI
                 boughtSomething = false;
             }
             onClose.Invoke();
+            isOpen = false;
         }
 
         public void BuyClothes()
@@ -78,15 +82,18 @@ namespace UI
             if (selectedClothes.value <= PlayerController.ME.money.money)
             {
                 PlayerController.ME.AddClothesToInventory(selectedClothes, true);
-                boughtSomething = true;
                 onSell.Invoke();
+                boughtSomething = true;
                 CloseHUD();
                 PlayerController.ME.money.SpendMoney(selectedClothes.value);
+                if (PlayerController.ME.inventory.allClothes.Count >=1)
+                    Instructions.ME.ShowTreeTip();
             }
             else
             {
                 Debug.Log("Not enough money to buy");
             }
+            
         }
     }
 }
