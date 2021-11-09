@@ -9,6 +9,7 @@ namespace Player
     {
         public TMP_Text text;
         public float money = 40f;
+        public Animator coinAnim;
 
 
         private void Start()
@@ -21,6 +22,7 @@ namespace Player
             if (!(money >= value)) return;
             money -= value;
             text.text = money.ToString();
+            coinAnim.SetTrigger("spin");
         }
     }
 }
